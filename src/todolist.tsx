@@ -1,3 +1,4 @@
+import { MenuItem, Select } from "@mui/material";
 import { useRecoilState, useRecoilValue } from "recoil";
 import {
   filteredTodoListState,
@@ -18,11 +19,11 @@ export const TodoListFilters = () => {
   return (
     <>
       Filter:
-      <select value={filter} onChange={updateFilter}>
-        <option value="Show All">All</option>
-        <option value="Show Completed">Completed</option>
-        <option value="Show Uncompleted">Uncompleted</option>
-      </select>
+      <Select value={filter} onChange={updateFilter}>
+        <MenuItem value="Show All">All</MenuItem>
+        <MenuItem value="Show Completed">Completed</MenuItem>
+        <MenuItem value="Show Uncompleted">Uncompleted</MenuItem>
+      </Select>
     </>
   );
 };

@@ -1,3 +1,4 @@
+import { Button, Input } from "@mui/material";
 import { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import { todoListState } from "../atoms/todoListState";
@@ -23,8 +24,10 @@ export const TodoItemCreator = () => {
   };
   return (
     <div>
-      <input type="text" value={inputValue} onChange={onChange} />
-      <button onClick={addItem}>Add</button>
+      <Input type="text" value={inputValue} onChange={onChange} />
+      <Button onClick={addItem} variant="contained">
+        Add
+      </Button>
     </div>
   );
 };

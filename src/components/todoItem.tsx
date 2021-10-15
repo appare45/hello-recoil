@@ -1,3 +1,4 @@
+import { Checkbox, Input } from "@mui/material";
 import { useRecoilState } from "recoil";
 import { todoListState, todoListType } from "../atoms/todoListState";
 
@@ -46,12 +47,8 @@ export const TodoItem = ({ item }: { item: todoListType }) => {
 
   return (
     <div>
-      <input type="text" value={item.text} onChange={editItemText} />
-      <input
-        type="checkbox"
-        checked={item.isComplete}
-        onChange={toggleItemCompletion}
-      />
+      <Checkbox checked={item.isComplete} onChange={toggleItemCompletion} />
+      <Input type="text" value={item.text} onChange={editItemText} />
     </div>
   );
 };
